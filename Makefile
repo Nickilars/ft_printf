@@ -1,44 +1,42 @@
-NAME		= libftprintf.a
+CC		= gcc
 
-CC			= gcc
+CFLAGS	= -Wall -Wextra -Werror
 
-CFLAGS		= -Wall -Wextra -Werror
+SRC		= ft_printf.c \
+		ft_print_c.c \
+		ft_print_s.c \
+		ft_print_d.c \ft_print_hex.c
 
-FILES		=
+OBJ		= $(SRC:.c=.o)
 
-FILES_BONUS	= 
+NAME	= libftprintf.a
 
-SRCS_DIR	= ./
-SRCS		= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_BONUS	= $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_BONUS)))
+DEPS	= libftprintf.h
 
-OBJS_DIR 	= ./
-OBJS		= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_BONUS	= $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_BONUS)))
+RM		= rm -rf
 
-.c.o: 		$(SRCS)
-			$(CC) $(CFLAGS) -c -o $@ $<
+LIBFT	= libft
 
-DEPS		= libftprintf.h
+all :	$(NAME)
 
-RM			= rm -rf
+%.o :	%.c $(DEPS)
+		$(CC) $(CFLAGS) -o $@ -c $<
 
-$(NAME):	$(OBJS)
-			ar -rcs $(NAME) $(OBJS)
-			ranlib $(NAME)
+$(NAME) : $(OBJ)
+		$(MAKE) -C $(LIBFT)
+		cp libft/libft.a .
+		mv libft.a $(NAME)
+		ar rc $(NAME) $(OBJ)
+		ranlib $(NAME)
 
-bonus:		$(OBJS_BONUS)
-			ar -rcs $(NAME) $(OBJS_BONUS)
-			ranlib $(NAME)
+re : fclean $(NAME)
 
-all:		$(NAME)
+clean :
+		$(RM) *.o
+		$(MAKE) -C $(LIBFT) clean
 
-re:			fclean all
+fclean : clean
+		$(RM) $(NAME)
+		$(RM) $(LIBFT)/libft.a
 
-clean:		
-			$(RM) *.o
-
-fclean:		clean
-			$(RM) $(NAME)
-
-.PHONY: all re clean fclean bonus
+.PHONY: all re clean fclean

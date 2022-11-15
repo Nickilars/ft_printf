@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 11:03:40 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 09:50:48 by nrossel          ###   ########.fr       */
+/*   Created: 2022/11/15 10:34:54 by nrossel           #+#    #+#             */
+/*   Updated: 2022/11/15 10:43:50 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include <stdio.h>
 
-int	ft_print_d(int nb, int res)
+int main (void)
 {
-	if (nb == -2147483648)
-	{
-		ft_print_s("-2147483648");
-		res = 11;
-	}
-	else if (nb < 0)
-	{
-		ft_print_c('-');
-		nb = -nb;
-		res += 1;
-	}
-	else if (nb > 9)
-	{
-		ft_print_d(nb / 10, res);
-		ft_print_c(nb % 10 + '0');
-		res += 1;
-	}
-	else if (0 <= nb && nb < 10)
-	{
-		ft_print_c(nb + '0');
-		res += 1;
-	}
-	return (res);
-}
+	int n = 12;
+	int n2 = 24;
+	int *ptr;
+	int *ptr2;
 
-/*int	main()
-{
-	ft_putnbr(20000);
+	ptr = &n;
+	ptr2 = &n2;
+	printf("%p", ptr);
+	printf("\n");
+	printf("%p", ptr2);
 	return (0);
-}*/
+}

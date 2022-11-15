@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/14 10:57:42 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 08:38:02 by nrossel          ###   ########.fr       */
+/*   Created: 2022/11/15 08:42:58 by nrossel           #+#    #+#             */
+/*   Updated: 2022/11/15 17:42:38 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+/*#include "libftprintf.h"
 
-int	ft_print_c(char c)
+int	ft_print_p(unsigned long nb)
 {
-	write(1, &c, 1);
-	return (1);
-}
+	int	res;
+
+	res = 0;*/
