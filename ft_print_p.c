@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 08:42:58 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 17:42:38 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 11:25:30 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libftprintf.h"
+#include "libftprintf.h"
 
 int	ft_print_p(unsigned long nb)
 {
-	int	res;
-
-	res = 0;*/
+	int		ret;
+	
+	ret += ft_print_s("0x");
+	ret += ft_print_hex(nb, 'x');
+	return (ret);
+}

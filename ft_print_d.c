@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:03:40 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 09:50:48 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 10:51:32 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_print_d(int nb, int res)
+int	ft_print_d(int nb, int ret)
 {
 	if (nb == -2147483648)
-	{
-		ft_print_s("-2147483648");
-		res = 11;
-	}
+		ret += ft_print_s("-2147483648");
 	else if (nb < 0)
 	{
-		ft_print_c('-');
+		ret += ft_print_c('-');
 		nb = -nb;
-		res += 1;
 	}
 	else if (nb > 9)
 	{
-		ft_print_d(nb / 10, res);
-		ft_print_c(nb % 10 + '0');
-		res += 1;
+		ft_print_d(nb / 10, ret);
+		ret += ft_print_c(nb % 10 + '0');
 	}
 	else if (0 <= nb && nb < 10)
-	{
-		ft_print_c(nb + '0');
-		res += 1;
-	}
-	return (res);
+		ret += ft_print_c(nb + '0');
+	return (ret);
 }
 
 /*int	main()

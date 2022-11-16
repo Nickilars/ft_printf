@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x.c                                       :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 08:42:44 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 17:42:07 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 10:47:38 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_upperchar(unsigned long nb, char *str)
 
 	i = ft_len_nb(nb) - 1;
 	base = "0123456789ABCDEF";
-	while (i > 0)
+	while (i >= 0)
 	{
 		str[i--] = base[nb % 16];
 		nb /= 16;
@@ -63,7 +63,7 @@ int	ft_print_hex(unsigned long nb, char c)
 {
 	char			*str;
 
-	str = ft_calloc((ft_len_nb(nb) + 1),  sizeof(char));
+	str = ft_calloc((ft_len_nb(nb) + 1), sizeof(char));
 	if (!str)
 		return (0);
 	str[ft_len_nb(nb) + 1] = 0;
@@ -75,15 +75,16 @@ int	ft_print_hex(unsigned long nb, char c)
 	free(str);
 	return (ft_len_nb(nb));
 }
-#include <stdio.h>
 
-int	main(int ac, char **av)
+/*int	main(int ac, char **av)
 {
 	(void) ac;
 	(void) av;
 	unsigned long	nb = 25795;
 	char			c = 'X';
 	int	retour = ft_print_hex(nb, c);
-	printf("%d", retour);
+	ft_printf("\n");
+	ft_printf("%d", retour);
 	return (0);
 }
+*/

@@ -5,7 +5,8 @@ CFLAGS	= -Wall -Wextra -Werror
 SRC		= ft_printf.c \
 		ft_print_c.c \
 		ft_print_s.c \
-		ft_print_d.c \ft_print_hex.c
+		ft_print_d.c \
+		ft_print_hex.c 
 
 OBJ		= $(SRC:.c=.o)
 

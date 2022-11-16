@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nrossel <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 16:09:48 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/15 17:42:14 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 10:46:18 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
-//# include "libft.h"
+# include "libft/libft.h"
 
 /*typedef struct t_input	t_input;
 struct  t_input
@@ -37,7 +37,8 @@ int	ft_printf(const char *, ...);
 int		ft_print_c(char c);
 int		ft_print_s(const char *str);
 int		ft_print_d(int nb, int res);
-//int		ft_print_p(unsigned int nb);
-//int		ft_print_u(unsigned int nb, int);
+int		ft_print_p(unsigned int nb);
+int		ft_print_u(unsigned int nb, int);
 int		ft_print_hex(unsigned long nb, char c);
+int 	ft_printf(const char *str, ...);
 #endif
