@@ -6,7 +6,7 @@
 /*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 08:42:44 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/16 13:01:19 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 16:23:07 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,15 @@ int	ft_print_hex(unsigned long nb, char c)
 {
 	char			*str;
 
+	if (nb == 0)
+	{
+		ft_print_c('0');
+		return (1);
+	}
 	str = ft_calloc((ft_len_nb(nb) + 1), sizeof(char));
 	if (!str)
 		return (0);
-	str[ft_len_nb(nb) + 1] = 0;
+	str[ft_len_nb(nb)] = 0;
 	if (c == 'x')
 		ft_lowchar(nb, str);
 	else

@@ -6,7 +6,7 @@
 /*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:05:21 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/16 14:46:32 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 15:37:41 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,17 @@ int	ft_printf(const char *str, ...)
 				ret += ft_type_in(str[i], arg);
 		}
 		else
-		{
-			ft_print_c(str[i]);
-			ret += 1;
-		}
+			ret += ft_print_c(str[i]);
 		i++;
 	}
 	va_end(arg);
 	return (ret);
 }
+
+/*int	main()
+{
+	int ret = 0;
+	ret = ft_printf(" NULL %s NULL ", NULL);
+	ft_printf("%d", ret);
+	return (0);
+}*/
