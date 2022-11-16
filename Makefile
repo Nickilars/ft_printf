@@ -6,13 +6,15 @@ SRC		= ft_printf.c \
 		ft_print_c.c \
 		ft_print_s.c \
 		ft_print_d.c \
-		ft_print_hex.c 
+		ft_print_hex.c \
+		ft_print_p.c \
+		ft_print_u.c
 
 OBJ		= $(SRC:.c=.o)
 
 NAME	= libftprintf.a
 
-DEPS	= libftprintf.h
+DEPS	= ft_printf.h
 
 RM		= rm -rf
 

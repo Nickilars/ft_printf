@@ -6,11 +6,11 @@
 /*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/15 08:42:44 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/16 10:47:38 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 13:01:19 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 /*------------------- Len_nb ----------------------*/
 
 int	ft_len_nb(unsigned long nb)

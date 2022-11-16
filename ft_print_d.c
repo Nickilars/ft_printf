@@ -6,28 +6,31 @@
 /*   By: nrossel <nrossel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 11:03:40 by nrossel           #+#    #+#             */
-/*   Updated: 2022/11/16 10:51:32 by nrossel          ###   ########.fr       */
+/*   Updated: 2022/11/16 14:41:11 by nrossel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_print_d(int nb, int ret)
+int	ft_print_d(int nb)
 {
-	if (nb == -2147483648)
-		ret += ft_print_s("-2147483648");
-	else if (nb < 0)
+	int		ret;
+	long	nbr;
+
+	nbr = nb;
+	ret = 0;
+	if (nbr < 0)
 	{
 		ret += ft_print_c('-');
-		nb = -nb;
+		ret += ft_print_d(-nbr);
 	}
-	else if (nb > 9)
+	else if (nbr > 9)
 	{
-		ft_print_d(nb / 10, ret);
-		ret += ft_print_c(nb % 10 + '0');
+		ret += ft_print_d(nbr / 10);
+		ret += ft_print_c((nbr % 10) + '0');
 	}
-	else if (0 <= nb && nb < 10)
-		ret += ft_print_c(nb + '0');
+	else if (0 <= nbr && nbr < 10)
+		ret += ft_print_c(nbr + '0');
 	return (ret);
 }
 
